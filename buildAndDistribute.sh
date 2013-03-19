@@ -56,7 +56,7 @@ fi
 echo "Cleaning $WORKSPACE_FILE_PATH now..."
 xcodebuild clean -workspace "${WORKSPACE_FILE_PATH}" -scheme "${SCHEME_NAME}" > /dev/null
 echo "Building $WORKSPACE_FILE_PATH now..."
-xcodebuild -workspace "${WORKSPACE_FILE_PATH}" -sdk "${SDK}" -configuration "${CONFIGURATION}" -scheme "${SCHEME_NAME}" install DSTROOT="${OUT_APP_DIR}" > /dev/null
+xcodebuild -workspace "${WORKSPACE_FILE_PATH}" -sdk "${SDK}" -configuration "${CONFIGURATION}" -scheme "${SCHEME_NAME}" install DSTROOT="${OUT_APP_DIR}" #> /dev/null
 echo "Archiving $WORKSPACE_FILE_PATH now..."
 xcrun -sdk "${SDK}" PackageApplication "${PWD}/$PRODUCT_NAME/${OUT_APP_DIR}/Applications/${SCHEME_NAME}.app" -o "${PWD}/${OUT_IPA_DIR}/${IPA_FILE_NAME}.ipa" -embed "${PROVISIONING_PATH}" > /dev/null
 
